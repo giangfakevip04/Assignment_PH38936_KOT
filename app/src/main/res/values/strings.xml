@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Assignment_PH38936</string>
+    <string name="fill_all_fields">Please fill in all the fields</string>
+    <string name="car_name">Tên xe</string>
+    <string name="manufacturer">Hãng sản xuất</string>
+    <string name="year">Năm sản xuất</string>
+    <string name="price">Giá</string>
+    <string name="description">Mô tả</string>
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="add_new_car">Thêm xe mới</string>
+    <string name="edit_car">Chỉnh sửa thông tin xe</string>
+    <string name="delete_car">Xóa xe</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="search_hint">Nhập tên xe hoặc hãng sản xuất...</string>
+    <string name="error_loading_cars">Lỗi khi tải danh sách xe</string>
+    <string name="error_saving_car">Lỗi khi lưu thông tin xe</string>
+    <string name="error_searching_cars">Error searching cars</string>
+    <string name="success_saving_car">Lưu thông tin xe thành công</string>
+    <string name="confirm_delete">Bạn có chắc chắn muốn xóa xe này?</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+    <string name="maxe">Mã xe</string>
+    <string name="sort">Sắp xếp</string>
+    <string name="sort_by_name">Theo tên</string>
+    <string name="sort_by_price">Theo giá</string>
+    <string name="sort_by_year">Theo năm</string>
+    <string name="settings">Cài đặt</string>
+    <string name="Nono">lỗi</string>
+</resources>
