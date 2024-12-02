@@ -22,20 +22,3 @@ public class CarViewModelFactory implements ViewModelProvider.Factory {
         throw new IllegalArgumentException("Unknown ViewModel class");
     }
 }
-
-//public class CarViewModelFactory implements ViewModelProvider.Factory {
-//    private final CarRepository repository;
-//
-//    public CarViewModelFactory(CarRepository repository) {
-//        this.repository = repository;
-//    }
-//
-//    @NonNull
-//    @Override
-//    public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-//        if (modelClass.isAssignableFrom(CarViewModel.class)) {
-//            return (T) new CarViewModel(repository);
-//        }
-//        throw new IllegalArgumentException("Unknown ViewModel class");
-//    }
-//}

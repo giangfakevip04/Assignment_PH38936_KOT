@@ -2,6 +2,7 @@ package com.example.assignment_ph38936;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 adapter.submitList(resource.getData());
                 progressBar.setVisibility(View.GONE);
             } else if (resource.getStatus() == Resource.Status.ERROR) {
+                Log.e("LOL", "loadCars:" +resource.getMessage() );
                 Toast.makeText(this, getString(R.string.error_loading_cars) + ": " + resource.getMessage(), Toast.LENGTH_LONG).show();
                 progressBar.setVisibility(View.GONE);
             } else if (resource.getStatus() == Resource.Status.LOADING) {
@@ -113,89 +115,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-
-
-
-
-
-//public class MainActivity extends AppCompatActivity {
-//
-//    private CarViewModel viewModel;
-//    private CarAdapter adapter;
-//    private ProgressBar progressBar;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//
-//        // Tạo repository
-//        CarRepository repository = new CarRepository();
-//
-//        // Tạo ViewModel với Factory
-//        CarViewModelFactory factory = new CarViewModelFactory(repository);
-//        viewModel = new ViewModelProvider(this, factory).get(CarViewModel.class);
-//
-//        progressBar = findViewById(R.id.progress_bar);
-//
-//        setupRecyclerView();
-//        setupFab();
-//        loadCars();
-//    }
-//
-//    private void setupRecyclerView() {
-//        RecyclerView recyclerView = findViewById(R.id.recycler_view);
-//        adapter = new CarAdapter(new ArrayList<>());
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setAdapter(adapter);
-//    }
-//
-//    private void setupFab() {
-//        FloatingActionButton fab = findViewById(R.id.fab_add_car);
-//        fab.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CarFormActivity.class)));
-//    }
-//
-//    private void loadCars() {
-//        viewModel.getCars().observe(this, resource -> {
-//            if (resource.getStatus() == Resource.Status.SUCCESS) {
-//                adapter.submitList(resource.getData());
-//                progressBar.setVisibility(View.GONE);
-//            } else if (resource.getStatus() == Resource.Status.ERROR) {
-//                Toast.makeText(this, getString(R.string.error_loading_cars) + ": " + resource.getMessage(), Toast.LENGTH_LONG).show();
-//                progressBar.setVisibility(View.GONE);
-//            } else if (resource.getStatus() == Resource.Status.LOADING) {
-//                progressBar.setVisibility(View.VISIBLE);
-//            }
-//        });
-//    }
-//
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main_menu, menu);
-//        MenuItem searchItem = menu.findItem(R.id.action_search);
-//        SearchView searchView = (SearchView) searchItem.getActionView();
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                performSearch(query);
-//                return true;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                return false;
-//            }
-//        });
-//        return true;
-//    }
-//
-//    private void performSearch(String query) {
-//        viewModel.searchCars(query).observe(this, resource -> {
-//            if (resource.getStatus() == Resource.Status.SUCCESS) {
-//                adapter.submitList(resource.getData());
-//            } else if (resource.getStatus() == Resource.Status.ERROR) {
-//                Toast.makeText(this, getString(R.string.error_searching_cars) + ": " + resource.getMessage(), Toast.LENGTH_LONG).show();
-//            }
-//        });
-//    }
-//}

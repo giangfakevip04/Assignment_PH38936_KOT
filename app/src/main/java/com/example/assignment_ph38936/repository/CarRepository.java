@@ -23,7 +23,7 @@ public class CarRepository {
     public CarRepository() {
         Retrofit retrofit = new Retrofit.Builder()
                 // Thử dùng http:// thay vì https:// trong trường hợp không có SSL
-                .baseUrl("http://192.168.0.111:3000/") // Đảm bảo rằng server của bạn có thể truy cập từ thiết bị Android
+                .baseUrl("http://10.0.2.2:5000/") // Đảm bảo rằng server của bạn có thể truy cập từ thiết bị Android
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
