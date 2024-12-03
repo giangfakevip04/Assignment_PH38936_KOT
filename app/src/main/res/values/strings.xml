@@ -26,5 +26,7 @@
     <string name="sort_by_price">Theo giá</string>
     <string name="sort_by_year">Theo năm</string>
     <string name="settings">Cài đặt</string>
-    <string name="Nono">lỗi</string>
+
+    <string name="Nono">Cài đặt</string>
+    <string name="invalid_number_format">lỗi khi them moi car</string>
 </resources>

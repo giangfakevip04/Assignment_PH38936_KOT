@@ -53,4 +53,3 @@ public class Resource<T> {
         return status == Status.LOADING;
     }
 }
-
